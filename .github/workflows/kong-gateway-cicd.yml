@@ -33,4 +33,4 @@ jobs:
             # The version of decK to install
             deck-version: 1.7.0
       - name: Ping Kong
-        run: deck ping
+        run: deck version

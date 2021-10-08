@@ -37,4 +37,4 @@ jobs:
       - name: Set env variables
         run: echo "kong_gateway_url=https://8002-0-e7cf9362.labs.konghq.com" >> $GITHUB_ENV
       - name: echo env variables
-        run: echo $GITHUB_ENV
+        run: echo $kong_gateway_url

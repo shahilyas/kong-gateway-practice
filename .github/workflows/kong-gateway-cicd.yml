@@ -24,7 +24,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-    
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.4.1
       - name: Setup decK
         # You may pin to the exact commit or the version.
         # uses: Kong/setup-deck@04ffee3c5e98d4456858acd551675c9d89d65f0c
@@ -32,6 +33,13 @@ jobs:
         with:
             # The version of decK to install
             deck-version: 1.7.0
+      - name: Install inso using npm
+        run: npm i -g insomnia-inso
+      - name: Lint api spec
+        run: | 
+              cd .insomnia/ApiSpec
+              inso lint spec spc_ec420f7621024e2c92227cd4bcee030f.yml
+              cd ..
       - name: deck version
         run: deck version
       - name: Set env variables

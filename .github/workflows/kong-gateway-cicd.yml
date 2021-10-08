@@ -35,6 +35,6 @@ jobs:
       - name: deck version
         run: deck version
       - name: Set env variables
-        run: echo "kong_gateway_url=https://8002-0-e7cf9362.labs.konghq.com" >> $GITHUB_ENV
-      - name: echo env variables
-        run: echo $kong_gateway_url
+        run: echo "DECK_KONG_ADDRESS=https://8002-0-e7cf9362.labs.konghq.com" >> $GITHUB_ENV
+      - name: Ping Kong 
+        run: deck ping

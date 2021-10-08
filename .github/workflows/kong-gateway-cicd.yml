@@ -35,6 +35,6 @@ jobs:
       - name: deck version
         run: deck version
       - name: Set env variables
-        run: echo "DECK_KONG_ADDR=https://d0d2-106-213-31-179.ngrok.io" >> $GITHUB_ENV
+        run: echo "DECK_KONG_ADDR=https://edde-106-213-31-179.ngrok.io" >> $GITHUB_ENV
       - name: Ping Kong 
         run: deck ping

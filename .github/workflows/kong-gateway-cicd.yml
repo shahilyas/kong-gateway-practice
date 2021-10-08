@@ -24,7 +24,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
+    
       - name: Setup decK
         # You may pin to the exact commit or the version.
         # uses: Kong/setup-deck@04ffee3c5e98d4456858acd551675c9d89d65f0c
@@ -34,3 +34,7 @@ jobs:
             deck-version: 1.7.0
       - name: deck version
         run: deck version
+      - name: Set env variables
+        run: echo "kong_gateway_url=https://8002-0-e7cf9362.labs.konghq.com" >> $GITHUB_ENV
+      - name: echo env variables
+        run: echo $GITHUB_ENV

@@ -34,7 +34,7 @@ jobs:
             # The version of decK to install
             deck-version: 1.7.0
       - name: Set env variables
-        run: echo "DECK_KONG_ADDR=https://edde-106-213-31-179.ngrok.io" >> $GITHUB_ENV
+        run: echo "DECK_KONG_ADDR=https://9438-106-213-31-179.ngrok.io" >> $GITHUB_ENV
       - name: Install inso using npm
         run: npm i -g insomnia-inso
       - name: Lint api spec

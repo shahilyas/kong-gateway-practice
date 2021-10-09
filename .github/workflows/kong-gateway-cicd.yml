@@ -52,4 +52,4 @@ jobs:
       - name: Validate exported kong config
         run: deck validate -s uuid-kong.yaml
       - name: Deploy changes to Kong Gateway
-        run: deck sync
+        run: deck sync -s uuid-kong.yaml

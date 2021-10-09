@@ -41,9 +41,12 @@ jobs:
         run: inso lint spec .insomnia/ApiSpec/spc_ec420f7621024e2c92227cd4bcee030f.yml
       - name: Run Test suites
         run: inso run test uts_30ce --env localdev
+      - name: export raw spec to open api spec
+        run: 
+          inso export spec .insomnia/ApiSpec/spc_ec420f7621024e2c92227cd4bcee030f.yml --output uuid-openapi.yaml
       - name: Create Kong config file
         run: 
-          inso generate config .insomnia/ApiSpec/spc_ec420f7621024e2c92227cd4bcee030f.yml -o uuid-kong.yml
+          inso generate config  uuid-openapi.yaml --o uuid-kong.yaml
       - name: Ping Kong 
         run: deck ping
       - name: Validate exported kong config

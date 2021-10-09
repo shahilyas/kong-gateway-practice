@@ -33,6 +33,8 @@ jobs:
         with:
             # The version of decK to install
             deck-version: 1.7.0
+      - name: Set env variables
+        run: echo "DECK_KONG_ADDR=https://edde-106-213-31-179.ngrok.io" >> $GITHUB_ENV
       - name: Install inso using npm
         run: npm i -g insomnia-inso
       - name: Lint api spec
@@ -40,9 +42,7 @@ jobs:
               cd .insomnia/ApiSpec
               inso lint spec spc_ec420f7621024e2c92227cd4bcee030f.yml
               cd ..
-      - name: deck version
-        run: deck version
-      - name: Set env variables
-        run: echo "DECK_KONG_ADDR=https://edde-106-213-31-179.ngrok.io" >> $GITHUB_ENV
+      - name: Run Test suites
+        run: inso run test uts_64b --env localdev
       - name: Ping Kong 
         run: deck ping

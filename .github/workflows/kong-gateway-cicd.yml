@@ -39,7 +39,10 @@ jobs:
         run: npm i -g insomnia-inso
       - name: Lint api spec
         run: | 
+              echo dir
+              cd ApiSpec
               inso lint spec spc_ec420f7621024e2c92227cd4bcee030f.yml
+              cd ..
       - name: Run Test suites
         run: inso run test uts_30ce --env localdev
       - name: Create Kong config file

@@ -1,11 +1,15 @@
 _id: spc_ec420f7621024e2c92227cd4bcee030f
 type: ApiSpec
 parentId: wrk_cd40d1cfd3bf4c92a3c9569679b3641d
-modified: 1633609286997
+modified: 1633762640348
 created: 1633609286916
 fileName: UUID generator based on httpbin.org 1.0.3
 contents: >-
   openapi: 3.0.0
+
+  tags:
+    - description: Creates a random UUDI and returns it in a JSON structure
+      name: Generate UUID
   info:
     contact:
       email: me@kennethreitz.org

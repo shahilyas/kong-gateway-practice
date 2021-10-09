@@ -38,7 +38,7 @@ jobs:
       - name: Install inso using npm
         run: npm i -g insomnia-inso
       - name: Lint api spec
-        run: inso lint spc_ec420f
+        run: inso lint spec spc_ec420f
       - name: Run Test suites
         run: inso run test uts_30ce --env localdev
       - name: export raw spec to open api spec

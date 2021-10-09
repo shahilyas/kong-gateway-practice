@@ -50,6 +50,6 @@ jobs:
       - name: Ping Kong 
         run: deck ping
       - name: Validate exported kong config
-        run: deck validate
+        run: deck validate uuid-kong.yaml
       - name: Deploy changes to Kong Gateway
         run: deck sync

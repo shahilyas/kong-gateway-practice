@@ -46,7 +46,7 @@ jobs:
           ls
           inso export spec spc_ec420f --output uuid-openapi.yaml
       - name: Create Kong config file
-        run: inso generate config  uuid-openapi.yaml --o uuid-kong.yaml
+        run: inso generate config  uuid-openapi.yaml --output uuid-kong.yaml
       - name: Ping Kong 
         run: deck ping
       - name: Validate exported kong config

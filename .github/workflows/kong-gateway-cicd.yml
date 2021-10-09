@@ -46,3 +46,4 @@ jobs:
         run: npx inso run test uts_30ce --env localdev
       - name: Ping Kong 
         run: deck ping
+

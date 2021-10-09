@@ -39,14 +39,14 @@ jobs:
         run: npm i -g insomnia-inso
       - name: Lint api spec
         run: | 
-              echo dir
               cd .insomnia
               cd ApiSpec
               inso lint spec spc_ec420f7621024e2c92227cd4bcee030f.yml
       - name: Run Test suites
         run: inso run test uts_30ce --env localdev
       - name: Create Kong config file
-        run: inso generate config spc_ec420f7621024e2c92227cd4bcee030f.yml -o uuid-kong.yml
+        run: 
+          inso generate config .insomnia/ApiSpec/spc_ec420f7621024e2c92227cd4bcee030f.yml -o uuid-kong.yml
       - name: Ping Kong 
         run: deck ping
       - name: Validate exported kong config
